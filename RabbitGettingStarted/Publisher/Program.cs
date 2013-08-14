@@ -3,35 +3,24 @@
     using System;
     using System.Diagnostics;
 
-    using EasyNetQ;
-
-    using Messages;
-
     public class Program
     {
         static void Main()
         {
-            IBus bus = null;
-
             try
             {
-                bus = BusFactory.Create();
+                var program = new Program();
 
-                Console.WriteLine("Press a key to generate a message.");
-                Console.ReadKey();
+                program.WaitToSendAMessage();
 
-                var message = new ExampleMessage { Greeting = "Hello, world!" };
-                using (var channel = bus.OpenPublishChannel())
-                    channel.Publish(message);
+                program.SendAMessage();
             }
             catch (Exception exception)
             {
                 var assemblyName = typeof(Program).AssemblyQualifiedName;
 
                 if (!EventLog.SourceExists(assemblyName))
-                {
                     EventLog.CreateEventSource(assemblyName, "Application");
-                }
 
                 var log = new EventLog { Source = assemblyName };
                 log.WriteEntry(string.Format("{0}", exception), EventLogEntryType.Error);
@@ -40,10 +29,23 @@
             {
                 Console.WriteLine("Press any key to exit.");
                 Console.ReadKey();
-
-                if (bus != null)
-                    bus.Dispose();
             }
+        }
+
+        private void SendAMessage()
+        {
+            var bus = BusFactory.Create();
+            
+            var publisher = new DemoPublisher(bus);
+            publisher.Publish();
+
+            bus.Dispose();
+        }
+
+        private void WaitToSendAMessage()
+        {
+            Console.WriteLine("Press a key to generate a message.");
+            Console.ReadKey();
         }
     }
 }

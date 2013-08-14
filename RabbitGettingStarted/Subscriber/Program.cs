@@ -3,21 +3,14 @@
     using System;
     using System.Diagnostics;
 
-    using EasyNetQ;
-
-    using Messages;
-
     public class Program
     {
         static void Main()
         {
-            IBus bus = null;
-
             try
             {
-                bus = BusFactory.Create();
-
-                bus.Subscribe<ExampleMessage>("subscriber", message => Console.WriteLine(message.Greeting));
+                var program = new Program();
+                program.DoASubscription();
             }
             catch (Exception exception)
             {
@@ -29,13 +22,23 @@
                 var log = new EventLog { Source = assemblyName };
                 log.WriteEntry(string.Format("{0}", exception), EventLogEntryType.Error);
             }
-            finally
+        }
+
+        private void DoASubscription()
+        {
+            var bus = BusFactory.Create();
+
+            try
             {
+                var subscriber = new DemoSubscriber(bus);
+                subscriber.ListenForAMessage();
+
                 Console.WriteLine("Press any key to exit.");
                 Console.ReadKey();
-
-                if (bus != null)
-                    bus.Dispose();
+            }
+            finally
+            {
+                bus.Dispose();                
             }
         }
     }
