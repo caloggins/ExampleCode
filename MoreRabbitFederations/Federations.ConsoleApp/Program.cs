@@ -10,7 +10,7 @@
         {
             try
             {
-
+                RunConversation();
             }
             catch (Exception exception)
             {
@@ -20,6 +20,13 @@
             {
                 DisplayExitPrompt();
             }
+        }
+
+        private static void RunConversation()
+        {
+            var container = WindsorFactory.Create();
+            var conversation = container.Resolve<Conversation>();
+            conversation.Start();
         }
 
         private static void DisplayException(Exception exception)
