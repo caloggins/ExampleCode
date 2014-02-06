@@ -2,13 +2,9 @@
 {
     using System;
 
-    using BarMessages;
-
     using BrokerLibrary;
 
     using EasyNetQ;
-
-    using FooMessages;
 
     using Properties;
 

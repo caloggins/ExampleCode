@@ -67,7 +67,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="WindsorFactory.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
