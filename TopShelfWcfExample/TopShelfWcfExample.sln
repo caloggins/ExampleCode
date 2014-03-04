@@ -1,27 +1,21 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30110.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TopShelfWcfExample.ConsoleApp", "TopShelfWcfExample.ConsoleApp\TopShelfWcfExample.ConsoleApp.csproj", "{7BB250C4-59CE-44B1-B8C6-066EF656BF0C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TopShelfWcfExample.ConsoleApp.UnitTests", "TopShelfWcfExample.ConsoleApp.UnitTests\TopShelfWcfExample.ConsoleApp.UnitTests.csproj", "{AB99DEA5-8486-468F-AC41-F7971F0C029D}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{62ECA726-851C-4302-B28B-1ABDE3D6F045}"
-	ProjectSection(SolutionItems) = preProject
-		.nuget\NuGet.Config = .nuget\NuGet.Config
-		.nuget\NuGet.exe = .nuget\NuGet.exe
-		.nuget\NuGet.targets = .nuget\NuGet.targets
-	EndProjectSection
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8FE7077C-C662-4902-8F50-5770D0616749}"
 	ProjectSection(SolutionItems) = preProject
 		ReadMe.txt = ReadMe.txt
+		Version.cs = Version.cs
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TopShelfWcfExample.MyBusinessLibrary", "TopShelfWcfExample.MyBusinessLibrary\TopShelfWcfExample.MyBusinessLibrary.csproj", "{AC76933F-D42A-43A9-A649-B19FF76D4519}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Service", "Service", "{228BB31A-EDF8-4628-938A-CC42EFE492D3}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client", "Client", "{0FDA62D6-35B5-4699-ADA4-3FE5210AFE78}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TopShelfWcfExample.MyBusinessLibrary.UnitTests", "TopShelfWcfExample.MyBusinessLibrary.UnitTests\TopShelfWcfExample.MyBusinessLibrary.UnitTests.csproj", "{1D2B4CA7-36B4-4734-AE56-B33DF8C3275D}"
 EndProject

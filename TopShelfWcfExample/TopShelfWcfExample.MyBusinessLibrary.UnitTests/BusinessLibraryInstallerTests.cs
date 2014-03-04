@@ -22,7 +22,7 @@
                         type => type == typeof (GreetingWithNameCommand)).ToList();
                 var registeredTypes = container.GetImplementationTypesFor<GreetingWithNameCommand>();
                 registeredTypes.Should().BeEquivalentTo(allTypes);
-                registeredTypes[0].ShouldHave().SharedProperties().EqualTo(allTypes[0]);
+                registeredTypes[0].ShouldBeEquivalentTo(allTypes[0], options => options.ExcludingNestedObjects());
             }
 
             private BusinessLibraryInstaller InstallerFactory()

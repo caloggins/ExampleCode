@@ -41,7 +41,7 @@
         {
             private string returnedGreeting;
             private const string SampleName = @"Chris";
-            private const string ExpectedGreeting = @"Goodbye, Chris.";
+            private const string ExpectedGreeting = @"Hello, Chris.";
 
             protected override void BecauseOf()
             {
