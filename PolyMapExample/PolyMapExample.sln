@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PolyMap.UnitTests", "PolyMap.UnitTests\PolyMap.UnitTests.csproj", "{966A6667-9761-4CD5-BB93-2D61AE05BBFF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PolyMap", "PolyMap\PolyMap.csproj", "{1E551EE5-D8B4-4046-948D-86547DC9AC07}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{966A6667-9761-4CD5-BB93-2D61AE05BBFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{966A6667-9761-4CD5-BB93-2D61AE05BBFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{966A6667-9761-4CD5-BB93-2D61AE05BBFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{966A6667-9761-4CD5-BB93-2D61AE05BBFF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E551EE5-D8B4-4046-948D-86547DC9AC07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E551EE5-D8B4-4046-948D-86547DC9AC07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E551EE5-D8B4-4046-948D-86547DC9AC07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E551EE5-D8B4-4046-948D-86547DC9AC07}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
