@@ -1,6 +1,6 @@
 namespace PolyMap
 {
-    public class OverloadedPublisher
+    public class OverloadedPublisher : IPublisher
     {
         private readonly IBus bus;
 
@@ -9,12 +9,23 @@ namespace PolyMap
             this.bus = bus;
         }
 
-        public void Publish(Start command)
+        public void Publish(Command command)
+        {
+            var commandType = command.GetType();
+
+            if (commandType == typeof(Start))
+                Publish((Start)command);
+
+            if (commandType == typeof(Stop))
+                Publish((Stop)command);
+        }
+
+        private void Publish(Start command)
         {
             bus.Publish(new Started { Id = command.Id });
         }
 
-        public void Publish(Stop command)
+        private void Publish(Stop command)
         {
             bus.Publish(new Stopped { Id = command.Id });
         }
