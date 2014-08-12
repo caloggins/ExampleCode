@@ -22,8 +22,8 @@
         {
             Output.MessageWithPause("Ready to publish a message.");
 
-            var message = new MyMessage{CurrentTime = DateTime.UtcNow};
+            var message = new MyMessage { CurrentTime = DateTime.UtcNow };
             bus.Publish(message);
-        } 
+        }
     }
 }
