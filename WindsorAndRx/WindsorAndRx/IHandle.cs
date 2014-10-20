@@ -1,11 +1,11 @@
 ﻿namespace WindsorAndRx
 {
-    public interface IEventHandler
+    public interface IHandle
     {
         
     }
 
-    public interface IHandle<in TEvent> : IEventHandler
+    public interface IHandle<in TEvent> : IHandle
         where TEvent : Event
     {
         void Handle(TEvent @event);
