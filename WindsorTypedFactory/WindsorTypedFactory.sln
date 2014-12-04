@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30110.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindsorTypedFactory.Library", "WindsorTypedFactory.Library\WindsorTypedFactory.Library.csproj", "{77E4D953-7A6F-4906-AC1C-CD303F3BEF16}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindsorTypedFactory.Library.UnitTests", "WindsorTypedFactory.Library.UnitTests\WindsorTypedFactory.Library.UnitTests.csproj", "{28F30321-AD04-48F5-9B37-4ED3431F216A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{77E4D953-7A6F-4906-AC1C-CD303F3BEF16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77E4D953-7A6F-4906-AC1C-CD303F3BEF16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77E4D953-7A6F-4906-AC1C-CD303F3BEF16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77E4D953-7A6F-4906-AC1C-CD303F3BEF16}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28F30321-AD04-48F5-9B37-4ED3431F216A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28F30321-AD04-48F5-9B37-4ED3431F216A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28F30321-AD04-48F5-9B37-4ED3431F216A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28F30321-AD04-48F5-9B37-4ED3431F216A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
