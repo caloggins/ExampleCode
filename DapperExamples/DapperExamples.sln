@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DapperExamples", "DapperExamples\DapperExamples.csproj", "{DF56E89C-7E7C-479F-93EF-8B554AB82B15}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QueryClasses", "QueryClasses\QueryClasses.csproj", "{53FEA875-2B69-4E8D-A03A-72F6ECEF51CA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DF56E89C-7E7C-479F-93EF-8B554AB82B15}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF56E89C-7E7C-479F-93EF-8B554AB82B15}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF56E89C-7E7C-479F-93EF-8B554AB82B15}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF56E89C-7E7C-479F-93EF-8B554AB82B15}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53FEA875-2B69-4E8D-A03A-72F6ECEF51CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53FEA875-2B69-4E8D-A03A-72F6ECEF51CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53FEA875-2B69-4E8D-A03A-72F6ECEF51CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53FEA875-2B69-4E8D-A03A-72F6ECEF51CA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
