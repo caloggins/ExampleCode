@@ -1,6 +1,7 @@
 ﻿namespace QueryClasses
 {
     using System.Data;
+    using Dapper;
     using DapperExtensions;
 
     internal class SaveOrUpdate<TEntity, TKey>
@@ -17,8 +18,9 @@
         {
             using (var transaction = connection.BeginTransaction())
             {
-                connection.Delete<TEntity>(new { thingToSave.Id }, transaction);
-                connection.Insert(thingToSave, transaction);
+                var updated = connection.Update(thingToSave, transaction);
+                if (!updated)
+                    connection.Insert(thingToSave, transaction);
 
                 transaction.Commit();
             }

@@ -5,31 +5,55 @@
 
     class Program
     {
+        private const string ConnectionString = "Server=localhost;Database=Experimental;User Id=Adama;Password=William";
+
         static void Main()
         {
             try
             {
-                DapperThing thing;
+                var thing = new DapperThing
+                {
+                    Id = Guid.NewGuid(),
+                    CreateDate = DateTime.UtcNow,
+                    ModifiedDate = DateTime.UtcNow,
+                    SomeData = Guid.NewGuid(),
+                };
 
-                const string connectionString = "Server=localhost;Database=Experimental;User Id=Adama;Password=William";
-                using (var connection = new SqlConnection(connectionString))
+                Console.WriteLine("*** Save ***");
+                using (var connection = new SqlConnection(ConnectionString))
                 {
                     connection.Open();
-                    const string id = "C2809366-B155-4314-84FB-331A409616E8";
-                    thing = new GetById<DapperThing, Guid>(connection)
-                        .Run(new {Id = new Guid(id)}) ?? new DapperThing {Id = new Guid(id)};
+                    var save = new Save<DapperThing, Guid>(connection);
+                    save.Run(thing);
                 }
+                Console.WriteLine(thing);
 
-                Console.WriteLine(thing.EnrollmentKey);
-
-                thing.EnrollmentKey = Guid.NewGuid();
-                Console.WriteLine(thing.EnrollmentKey);
-
-                using (var connection = new SqlConnection(connectionString))
+                Console.WriteLine("*** Update ***");
+                thing.SomeData = Guid.NewGuid();
+                using (var connection = new SqlConnection(ConnectionString))
                 {
                     connection.Open();
                     new SaveOrUpdate<DapperThing, Guid>(connection).Run(thing);
                 }
+                Console.WriteLine(thing);
+
+                Console.WriteLine("*** Get ***");
+                using (var connection = new SqlConnection(ConnectionString))
+                {
+                    connection.Open();
+                    var getById = new GetById<DapperThing, Guid>(connection);
+                    var fromDb = getById.Run(new{thing.Id});
+                    Console.WriteLine(fromDb);
+                }
+
+                Console.WriteLine("*** Update ***");
+                thing.SomeData = Guid.NewGuid();
+                using (var connection = new SqlConnection(ConnectionString))
+                {
+                    connection.Open();
+                    new SaveOrUpdate<DapperThing, Guid>(connection).Run(thing);
+                }
+                Console.WriteLine(thing);
             }
             catch (Exception e)
             {
