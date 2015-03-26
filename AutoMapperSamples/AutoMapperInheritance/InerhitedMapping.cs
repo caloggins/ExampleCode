@@ -12,8 +12,6 @@
         public void SetUp()
         {
             Mapper.Reset();
-            Mapper.CreateMap<Base, Target>()
-                .ForMember(dest => dest.Created, o => o.Ignore());
             Mapper.CreateMap<Source, Target>();
         }
 
