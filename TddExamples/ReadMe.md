@@ -4,7 +4,7 @@ A simple demonstration of some different testing and coding techniques.
 
 ## Unit Test Patterns
 
-These are in `TddEXamples.Naming.Tests.WidgetTests.cs`
+These are in `TddExamples.Naming.Tests.WidgetTests.cs`
 
 1. Arrange, Act, Assert or AAA
     1. Using constants to be more specific.
@@ -16,6 +16,8 @@ These are in `TddEXamples.Naming.Tests.WidgetTests.cs`
     1. Integration attribute test to be skipped.
 
 ## Coding Examples
+
+These are in `TddExamples.Naming` folder.
 
 `Widget.cs`
 
