@@ -3,7 +3,6 @@
     using System;
     using FluentAssertions;
     using NUnit.Framework;
-    using OneTechnologies.TestingBits;
 
     public class WidgetTests
     {
@@ -76,7 +75,7 @@
             }
 
             // Testing for exceptions.
-            [Test]
+            [Test]  
             public void ItShouldThrowAnException()
             {
                 exception.Should().BeOfType<ArgumentException>();
