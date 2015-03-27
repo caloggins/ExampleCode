@@ -39,9 +39,6 @@
     <Reference Include="nunit.framework">
       <HintPath>..\packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
     </Reference>
-    <Reference Include="OneTechnologies.TestingBits">
-      <HintPath>..\packages\OneTechnologies.TestingBits.1.0.0\lib\net451\OneTechnologies.TestingBits.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -51,6 +48,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Capture.cs" />
+    <Compile Include="ContextSpecification.cs" />
+    <Compile Include="IntegrationAttribute.cs" />
     <Compile Include="WidgetTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
