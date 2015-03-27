@@ -10,7 +10,7 @@
 
         public ParserMap()
         {
-            // chain of responsibility, so order is important
+            // strategy, so order is important
             parsers.Add(s => s == "", Parser.Empty);
             parsers.Add(s => s.Contains(","), Parser.Multiple);
             parsers.Add(s => s.Length == 1, Parser.Single);
@@ -29,7 +29,7 @@
 
         public void Set(Parser parser)
         {
-            throw new NotImplementedException();
+            throw new NotImplementedException("This space intentionally left blank.");
         }
     }
 }

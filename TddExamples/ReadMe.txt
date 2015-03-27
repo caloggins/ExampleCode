@@ -1,1 +1,0 @@
-A simple demonstration of some different testing and coding techniques.
