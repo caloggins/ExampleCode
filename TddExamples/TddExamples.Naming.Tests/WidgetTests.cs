@@ -1,5 +1,6 @@
 ﻿namespace TddExamples.Naming.Tests
 {
+    using System;
     using FluentAssertions;
     using NUnit.Framework;
 
@@ -60,6 +61,24 @@
                 var sum = sut.Add(numbers);
 
                 sum.Should().Be(expectedResult);
+            }
+        }
+
+        public class Assertions : WidgetTests
+        {
+            // Using an attribute. This breaks the AAA pattern.
+            [Test, ExpectedException(typeof(ArgumentException))]
+            public void ItShouldThrowAnExceptionWhenGivenInvalidInput()
+            {
+                GetWidget().Add("blah");
+            }
+
+            // Capturing the exception for use in an assertion is better.
+            [Test]
+            public void ItShouldDoSomething()
+            {
+                Capture.Exception(() => GetWidget().Add("blah"))
+                    .Should().BeOfType<ArgumentException>();
             }
         }
 
