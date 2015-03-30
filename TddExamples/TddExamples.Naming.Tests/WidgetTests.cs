@@ -1,14 +1,15 @@
 ﻿namespace TddExamples.Naming.Tests
 {
-    using System;
     using FluentAssertions;
     using NUnit.Framework;
 
+    // Arrange, Act, Assert
     public class WidgetTests
     {
-        // Arrange, Act, Assert
-        public class Add 
+        // Nested class is method being tested.
+        public class Add : WidgetTests
         {
+            // Test names are condition and expected together.
             [Test]
             public void ItShouldReturnTheDefaultValueForAnEmptyString()
             {
@@ -35,6 +36,19 @@
                 result.Should().Be(theSameNumber);
             }
 
+            // You can use underscores too
+            [Test]
+            public void WhenGivenMultipleNumbers_ItShouldReturnTheSum()
+            {
+                const string listOfNumbers = "1,2";
+                const int sumOfTheNumbers = 3;
+                var sut = GetWidget();
+
+                var result = sut.Add(listOfNumbers);
+
+                result.Should().Be(sumOfTheNumbers);                
+            }
+
             // data-driven tests, reduces duplication
             [TestCase("", 0)]
             [TestCase("1", 1)]
@@ -47,46 +61,13 @@
 
                 sum.Should().Be(expectedResult);
             }
-
-            // try to use a factory if you need it more than once
-            private static Widget GetWidget()
-            {
-                // this helps hide the dependency from the test, +1 maintainability
-                return new Widget(new ParserMap());
-            }
         }
 
-        // Context specification style, multiple asserts per action.
-        public class WhenGivenInvalidInput : ContextSpecification
+        // try to use a factory if you need it more than once
+        private static Widget GetWidget()
         {
-            private Exception exception;
-            private Widget sut;
-
-            protected override void Context()
-            {
-                base.Context();
-
-                sut = new Widget(new ParserMap());
-            }
-
-            protected override void BecauseOf()
-            {
-                exception = Capture.Exception(() => sut.Add("blah"));
-            }
-
-            // Testing for exceptions.
-            [Test]  
-            public void ItShouldThrowAnException()
-            {
-                exception.Should().BeOfType<ArgumentException>();
-            }
-
-            // Tag integration tests, useful to ignore
-            [Test, Integration]
-            public void IntegrationTestsShouldBeIgnored()
-            {
-                Assert.Fail("because the database isn't setup");
-            }
+            // this helps hide the dependency from the test, +1 maintainability
+            return new Widget(new ParserMap());
         }
     }
 }
