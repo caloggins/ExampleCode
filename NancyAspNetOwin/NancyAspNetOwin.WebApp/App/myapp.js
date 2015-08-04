@@ -1,14 +1,22 @@
-﻿define(["jquery", "knockout"], function($, ko) {
+﻿define(["jquery", "knockout"], function ($, ko) {
     var myapp = {
         token: ko.observable(""),
-        bus: new ko.subscribable(),
+        bus: new ko.subscribable()
     };
 
-    myapp.showToken = ko.computed(function() {
+    myapp.showToken = ko.computed(function () {
         return myapp.token().length > 0;
     });
 
-    $(document).ready(function() {
+    myapp.showLoginButton = ko.computed(function() {
+        return myapp.token().length === 0;
+    });
+
+    myapp.showLoginForm = function () {
+        $("#loginForm").modal("show");
+    }
+
+    $(document).ready(function () {
         ko.applyBindings(myapp);
     });
 });

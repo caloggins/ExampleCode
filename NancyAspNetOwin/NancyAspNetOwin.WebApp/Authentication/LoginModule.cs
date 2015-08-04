@@ -14,8 +14,6 @@
 
         public LoginModule(UserData userData)
         {
-            Get["/login"] = o => View["Authentication/login"];
-
             Post["/login"] = p =>
             {
                 var credentials = this.Bind<Credentials>();
@@ -38,7 +36,6 @@
                     };
 
                     var encodedToken = JsonWebToken.Encode(token, SecretKey, JwtHashAlgorithm.HS256);
-
                     return Response.AsJson(encodedToken);
                 }
 

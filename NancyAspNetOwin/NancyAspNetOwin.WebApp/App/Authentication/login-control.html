@@ -1,14 +1,16 @@
-﻿<div class="container" data-bind="visible: showLoginControls">
-    <div class="wrapper">
-        <div class="form-signin">
-            <h3 class="form-signin-heading">Welcome! Please Sign In</h3>
-            <hr class="colorgraph" />
-            <br />
+﻿<div id="loginForm" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content wrapper">
+            <div class="form-signin">
+                <h3 class="form-signin-heading">Welcome! Please Sign In</h3>
+                <hr class="colorgraph" />
+                <br />
 
-            <input id="userName" class="form-control" data-bind="textInput: userName" type="text" autofocus="" />
-            <input id="password" class="form-control" data-bind="textInput: password" type="password" />
+                <input id="userName" class="form-control" data-bind="textInput: userName" type="text" autofocus="" />
+                <input id="password" class="form-control" data-bind="textInput: password" type="password" />
 
-            <a href="#" class="btn btn-lg btn-primary btn-block" data-bind="click: getToken">Login</a>
+                <a href="#" class="btn btn-lg btn-primary btn-block" data-bind="click: getToken">Login</a>
+            </div>            
         </div>
     </div>
 </div>

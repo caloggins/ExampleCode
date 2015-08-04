@@ -1,8 +1,6 @@
-﻿define(["jquery", "knockout"], function ($, ko) {
+﻿define(["jquery", "knockout", "bootstrap", "cookie"], function ($, ko) {
     function loginControl(params) {
         var self = this;
-
-        self.showLoginControls = ko.observable(true);
 
         self.userName = ko.observable("testuser");
         self.password = ko.observable("testuser");
@@ -24,8 +22,8 @@
                     });
                     params.data(result);
                     params.bus.notifySubscribers({}, "logged-in");
-                    self.showLoginControls(false);
-                    window.sessionStorage.setItem("token", result);
+                    $.cookie("token", result);
+                    $("#loginForm").modal("hide");
                 }
             });
         };
