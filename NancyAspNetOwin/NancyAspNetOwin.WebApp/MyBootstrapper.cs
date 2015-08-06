@@ -17,10 +17,7 @@
 
             var owinEnvironment = context.GetOwinEnvironment();
 
-            if (owinEnvironment == null)
-                return;
-
-            var principal = owinEnvironment["server.User"] as ClaimsPrincipal;
+            var principal = owinEnvironment?["server.User"] as ClaimsPrincipal;
 
             if (principal == null) return;
 

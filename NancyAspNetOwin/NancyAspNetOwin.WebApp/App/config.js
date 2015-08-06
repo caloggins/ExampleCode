@@ -11,5 +11,6 @@
 });
 
 requirejs(["app/myapp",
-    "app/authentication/login-control-register"
+    "app/authentication/login-control-register",
+    "app/greeting/greeting-control-register"
 ]);

@@ -95,6 +95,9 @@
     <Content Include="App\Authentication\login-control.html" />
     <Content Include="App\Authentication\login-control.js" />
     <Content Include="App\config.js" />
+    <Content Include="App\Greeting\greeting-control.html" />
+    <Content Include="App\Greeting\greeting-control.js" />
+    <Content Include="App\Greeting\greeting-control-register.js" />
     <Content Include="App\myapp.js" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -124,7 +127,9 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Authentication\ISecureTokenCreator.cs" />
     <Compile Include="Authentication\InvalidUser.cs" />
+    <Compile Include="Authentication\SecureTokenCreator.cs" />
     <Compile Include="Authentication\ValidatedUser.cs" />
     <Compile Include="Authentication\UserData.cs" />
     <Compile Include="Authentication\SecureTokenValidator.cs" />
