@@ -1,9 +1,13 @@
-﻿define(["jquery", "knockout", "cookie"], function ($, ko) {
+﻿define(["jquery", "knockout", "cookie"], function ($, ko, cookies) {
 
-    //console.log(typeof $.cookie);
+    // how to do stuff w/ cookies
+    cookies.set("sample", "my cookie value");
+    var myval = cookies.get("sample");
+    console.log(myval);
 
     var myapp = {
-        token: ko.observable(""),//.extend({ cookie: 'token' }),
+        // put the token in a cookie, and make it observable
+        token: ko.observable("").extend({ cookie: "token" }),
         bus: new ko.subscribable()
     };
 
