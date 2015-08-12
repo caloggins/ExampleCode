@@ -2,11 +2,14 @@
 {
     using Nancy;
     using Nancy.ModelBinding;
+    using Nancy.Security;
 
     public class LoginModule : NancyModule
     {
         public LoginModule(UserData userData, ISecureTokenCreator secureTokenCreator)
         {
+            this.RequiresHttps();
+
             Post["/login"] = p =>
             {
                 var credentials = this.Bind<Credentials>();

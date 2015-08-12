@@ -1,4 +1,4 @@
-﻿define(["jquery", "knockout", "bootstrap", "cookie"], function ($, ko) {
+﻿define(["jquery", "knockout", "bootstrap"], function ($, ko) {
     function loginControl(params) {
         var self = this;
 
@@ -22,7 +22,6 @@
                     });
                     params.data(result);
                     params.bus.notifySubscribers({}, "logged-in");
-                    $.cookie("token", result);
                     $("#loginForm").modal("hide");
                 }
             });

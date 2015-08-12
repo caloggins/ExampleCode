@@ -23,6 +23,9 @@
                 with.Module<LoginModule>();
                 with.Dependency<UserData>();
                 with.Dependency(secureTokenCreator);
+            }, with =>
+            {
+                with.HttpsRequest();
             });
         }
         public class WhenNoCredentialsAreGiven : LoginModuleTests

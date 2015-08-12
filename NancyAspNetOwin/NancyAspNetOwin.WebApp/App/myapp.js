@@ -1,6 +1,9 @@
-﻿define(["jquery", "knockout"], function ($, ko) {
+﻿define(["jquery", "knockout", "cookie"], function ($, ko) {
+
+    //console.log(typeof $.cookie);
+
     var myapp = {
-        token: ko.observable(""),
+        token: ko.observable(""),//.extend({ cookie: 'token' }),
         bus: new ko.subscribable()
     };
 
@@ -8,7 +11,7 @@
         return myapp.token().length > 0;
     });
 
-    myapp.showLoginButton = ko.computed(function() {
+    myapp.showLoginButton = ko.computed(function () {
         return myapp.token().length === 0;
     });
 

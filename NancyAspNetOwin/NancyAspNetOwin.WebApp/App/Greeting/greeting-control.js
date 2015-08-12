@@ -5,7 +5,7 @@
         self.greeting = ko.observable("");
 
         parameters.bus.subscribe(function() {
-            $.getJSON("/greeting", "", function(data) {
+            $.getJSON("/health", "", function(data) {
                 self.greeting(data);
             });
         }, self, "logged-in");

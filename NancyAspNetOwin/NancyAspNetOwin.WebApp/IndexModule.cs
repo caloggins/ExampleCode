@@ -3,9 +3,9 @@
     using Nancy;
     using Nancy.Security;
 
-    public class Index : NancyModule
+    public class IndexModule : NancyModule
     {
-        public Index()
+        public IndexModule()
         {
             this.RequiresHttps();
 
@@ -20,4 +20,4 @@
             };
         }
     }
-}
+} 
