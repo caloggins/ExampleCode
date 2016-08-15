@@ -8,14 +8,9 @@ namespace EntityFrameworkExample.Database
   public class LocalContext : DbContext, IContext
   {
     public LocalContext()
-      : this(@"Server=.\sqlserver2014;Database=Experiments;Trusted_Connection=True;")
+      : base(@"Server=.\sqlserver2014;Database=Experiments;Trusted_Connection=True;")
     {
 
-    }
-
-    public LocalContext(string connectionString)
-      : base(connectionString)
-    {
     }
 
     public new IDbSet<TType> Set<TType>()

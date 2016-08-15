@@ -16,7 +16,7 @@ namespace EntityFrameworkExample.Tests
     [Test]
     public void ItShouldGetItemsFromTheDatabase()
     {
-      var context = new LocalContext(@"Server=.\sqlserver2014;Database=Experiments;Trusted_Connection=True;");
+      var context = new LocalContext();
 
       var sampleItems = context.Set<SampleItem>()
         .ToList();
