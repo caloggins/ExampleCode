@@ -12,7 +12,7 @@ namespace NancyWithTokens.WebSite.Tests
         {
             var browser = new Browser(with => { with.Module<Health>(); });
 
-            var response = browser.Get("/", with => { with.HttpsRequest(); });
+            var response = browser.Get("/health", with => { with.HttpsRequest(); });
 
             response.StatusCode.Should().Be(HttpStatusCode.OK);
         }

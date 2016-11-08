@@ -6,7 +6,7 @@ namespace NancyWithTokens.WebSite
     {
         public Health()
         {
-            Get["/"] = o => HttpStatusCode.OK;
+            Get["/health"] = o => HttpStatusCode.OK;
         }
     }
 }
