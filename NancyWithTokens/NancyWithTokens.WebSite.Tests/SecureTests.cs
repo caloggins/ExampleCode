@@ -143,7 +143,7 @@ namespace NancyWithTokens.WebSite.Tests
             }
         }
 
-        public class ClaimsTests : SecureTests
+        public class WhenTheEndpointNeedsClaims : SecureTests
         {
             [Test]
             public void ItShouldDenyAccessWithNoClaims()
