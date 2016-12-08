@@ -77,6 +77,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Authentication\Claim.cs" />
+    <Compile Include="Authentication\IUserStore.cs" />
+    <Compile Include="Authentication\UserStore.cs" />
     <Compile Include="Authentication\IJwtKeyProvider.cs" />
     <Compile Include="Authentication\JwtKeyProvider.cs" />
     <Compile Include="Authentication\IStatelessAuthConfigurationFactory.cs" />
