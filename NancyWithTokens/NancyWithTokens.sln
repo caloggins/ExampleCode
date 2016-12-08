@@ -8,6 +8,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{FE545681-ED93-4466-9B04-5648395D2618}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
+		ReadMe.md = ReadMe.md
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NancyWithTokens.WebSite.Tests", "NancyWithTokens.WebSite.Tests\NancyWithTokens.WebSite.Tests.csproj", "{354BC2A9-01D2-4D3D-A686-8674DB61C5AA}"
