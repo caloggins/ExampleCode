@@ -9,18 +9,20 @@ namespace NancyWithTokens.WebSite.Authentication
     public class StatelessAuthConfigurationFactory : IStatelessAuthConfigurationFactory
     {
         private readonly IJwtKeyProvider keyProvider;
+        private readonly IUserStore userStore;
 
-        public StatelessAuthConfigurationFactory(IJwtKeyProvider keyProvider)
+        public StatelessAuthConfigurationFactory(IJwtKeyProvider keyProvider, IUserStore userStore)
         {
             this.keyProvider = keyProvider;
+            this.userStore = userStore;
         }
 
         public StatelessAuthenticationConfiguration Create()
         {
-            return new StatelessAuthenticationConfiguration(CreateConfiguration);
+            return new StatelessAuthenticationConfiguration(VerifyToken);
         }
 
-        private IUserIdentity CreateConfiguration(NancyContext context)
+        private IUserIdentity VerifyToken(NancyContext context)
         {
             var encryptedToken = context.Request.Headers.Authorization;
 
@@ -35,15 +37,23 @@ namespace NancyWithTokens.WebSite.Authentication
             if (TheAudienceDoesNotMatch(keyProvider, jwt))
                 return null;
 
-            if (!TheIssuerDoesNotMatch(keyProvider, jwt))
+            if (TheIssuerDoesNotMatch(keyProvider, jwt))
+                return null;
+
+            if (TheUserIsNotValid(jwt))
                 return null;
 
             return new ValidUser(jwt);
         }
 
+        private bool TheUserIsNotValid(Jwt jwt)
+        {
+            return !userStore.IsUserValid(jwt.Name);
+        }
+
         private static bool TheIssuerDoesNotMatch(IJwtKeyProvider provider, Jwt jwt)
         {
-            return provider.Issuer.Equals(jwt.Issuer);
+            return !provider.Issuer.Equals(jwt.Issuer);
         }
 
         private static bool TheAudienceDoesNotMatch(IJwtKeyProvider provider, Jwt jwt)

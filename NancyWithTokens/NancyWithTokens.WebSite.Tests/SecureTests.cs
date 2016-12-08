@@ -123,6 +123,28 @@ namespace NancyWithTokens.WebSite.Tests
             }
         }
 
+        public class WhenTheUserDoesNotExist : SecureTests
+        {
+            [Test]
+            public void ItShouldReturnTheCorrectStatusCode()
+            {
+                var browser = GetBrowser();
+
+                var jwt = GetToken();
+                jwt.Name = "nowhere man";
+                var token = JsonWebToken.Encode(jwt, ValidKey, JwtHashAlgorithm.HS512);
+
+                var response = browser.Get("/secure", with =>
+                {
+                    with.HttpsRequest();
+                    with.Header("Authorization", token);
+                });
+
+                response.StatusCode.Should().Be(HttpStatusCode.Unauthorized);
+            }
+
+        }
+
         public class WhenTheTokenEncryptionKeyIsIncorrect : SecureTests
         {
             [Test]
