@@ -2,6 +2,10 @@
 using System.Linq;
 using FluentAssertions;
 using FluentValidation;
+using MediatrDecorators.Decorator;
+using MediatrDecorators.MultipleRules;
+using MediatrDecorators.NoValidator;
+using MediatrDecorators.OneRule;
 using MediatR;
 using Ninject;
 using Ninject.Extensions.Conventions;
@@ -9,7 +13,7 @@ using NUnit.Framework;
 
 namespace MediatrDecorators
 {
-    public class CommandHandlerTests
+    public class ValidationTests
     {
         [Test]
         public void ItShouldHandleBasicCommands()
@@ -70,17 +74,6 @@ namespace MediatrDecorators
 
             act.ShouldThrow<ValidationException>()
                 .And.Errors.Count().Should().Be(2);
-        }
-
-        [Test]
-        public void ItShouldAllowProcessingWithoutValidators()
-        {
-            var mediator = GetMediator();
-
-            var command = new Fizz();
-            var response = mediator.Send(command);
-
-            response.Should().NotBeNull();
         }
 
         private static IMediator GetMediator()

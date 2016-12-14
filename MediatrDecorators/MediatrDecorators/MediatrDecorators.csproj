@@ -174,22 +174,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Command.cs" />
-    <Compile Include="CommandHandler.cs" />
-    <Compile Include="CommandHandlerTests.cs" />
-    <Compile Include="CommandValidator.cs" />
-    <Compile Include="Bar.cs" />
-    <Compile Include="BarHandler.cs" />
-    <Compile Include="BarValidator.cs" />
-    <Compile Include="Fizz.cs" />
-    <Compile Include="FizzHandler.cs" />
-    <Compile Include="Foo.cs" />
-    <Compile Include="FooHandler.cs" />
-    <Compile Include="FooValidator.cs" />
-    <Compile Include="NullValidator.cs" />
+    <Compile Include="NoValidator\Command.cs" />
+    <Compile Include="NoValidator\CommandHandler.cs" />
+    <Compile Include="ValidationTests.cs" />
+    <Compile Include="MultipleRules\Bar.cs" />
+    <Compile Include="MultipleRules\BarHandler.cs" />
+    <Compile Include="MultipleRules\BarValidator.cs" />
+    <Compile Include="OneRule\Foo.cs" />
+    <Compile Include="OneRule\FooHandler.cs" />
+    <Compile Include="OneRule\FooValidator.cs" />
+    <Compile Include="Decorator\NullValidator.cs" />
     <Compile Include="Response.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ValidatingHandler.cs" />
+    <Compile Include="Decorator\ValidatingHandler.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

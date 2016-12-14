@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace MediatrDecorators
+namespace MediatrDecorators.MultipleRules
 {
     public class Bar : IRequest<Response>
     {

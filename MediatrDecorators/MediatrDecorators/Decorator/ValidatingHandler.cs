@@ -2,7 +2,7 @@
 using FluentValidation;
 using MediatR;
 
-namespace MediatrDecorators
+namespace MediatrDecorators.Decorator
 {
     public class ValidatingHandler<TRequest, TResponse> : IRequestHandler<TRequest, TResponse>
         where TRequest : IRequest<TResponse>

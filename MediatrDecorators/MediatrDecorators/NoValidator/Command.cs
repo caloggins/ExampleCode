@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace MediatrDecorators
+namespace MediatrDecorators.NoValidator
 {
     public class Command : IRequest<Response>
     {
