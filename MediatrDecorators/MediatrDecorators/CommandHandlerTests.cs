@@ -72,6 +72,17 @@ namespace MediatrDecorators
                 .And.Errors.Count().Should().Be(2);
         }
 
+        [Test]
+        public void ItShouldAllowProcessingWithoutValidators()
+        {
+            var mediator = GetMediator();
+
+            var command = new Fizz();
+            var response = mediator.Send(command);
+
+            response.Should().NotBeNull();
+        }
+
         private static IMediator GetMediator()
         {
             var kernel = new StandardKernel();
