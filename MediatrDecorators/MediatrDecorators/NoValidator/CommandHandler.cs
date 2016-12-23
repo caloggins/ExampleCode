@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace MediatrDecorators
+namespace MediatrDecorators.NoValidator
 {
     // ReSharper disable once UnusedMember.Global
     public class CommandHandler : IRequestHandler<Command, Response>

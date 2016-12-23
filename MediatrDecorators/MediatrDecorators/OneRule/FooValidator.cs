@@ -1,7 +1,8 @@
 ﻿using FluentValidation;
+
 // ReSharper disable UnusedMember.Global
 
-namespace MediatrDecorators
+namespace MediatrDecorators.OneRule
 {
     public class FooValidator : AbstractValidator<Foo>
     {

@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace MediatrDecorators
+namespace MediatrDecorators.OneRule
 {
     public class Foo : IRequest<Response>
     {

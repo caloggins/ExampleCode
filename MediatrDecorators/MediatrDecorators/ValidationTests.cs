@@ -2,6 +2,10 @@
 using System.Linq;
 using FluentAssertions;
 using FluentValidation;
+using MediatrDecorators.Decorator;
+using MediatrDecorators.MultipleRules;
+using MediatrDecorators.NoValidator;
+using MediatrDecorators.OneRule;
 using MediatR;
 using Ninject;
 using Ninject.Extensions.Conventions;
@@ -9,7 +13,7 @@ using NUnit.Framework;
 
 namespace MediatrDecorators
 {
-    public class CommandHandlerTests
+    public class ValidationTests
     {
         [Test]
         public void ItShouldHandleBasicCommands()

@@ -1,7 +1,8 @@
 ﻿using FluentValidation;
+
 // ReSharper disable UnusedMember.Global
 
-namespace MediatrDecorators
+namespace MediatrDecorators.MultipleRules
 {
     public class BarValidator : AbstractValidator<Bar>
     {

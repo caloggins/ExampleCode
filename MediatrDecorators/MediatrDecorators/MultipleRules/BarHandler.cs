@@ -1,7 +1,8 @@
 ﻿using MediatR;
+
 // ReSharper disable UnusedMember.Global
 
-namespace MediatrDecorators
+namespace MediatrDecorators.MultipleRules
 {
     public class BarHandler : IRequestHandler<Bar, Response>
     {
