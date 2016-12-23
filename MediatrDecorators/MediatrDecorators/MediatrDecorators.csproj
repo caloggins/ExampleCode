@@ -174,6 +174,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Decorator\NullValidator.cs" />
     <Compile Include="NoValidator\Command.cs" />
     <Compile Include="NoValidator\CommandHandler.cs" />
     <Compile Include="ValidationTests.cs" />
@@ -183,7 +184,6 @@
     <Compile Include="OneRule\Foo.cs" />
     <Compile Include="OneRule\FooHandler.cs" />
     <Compile Include="OneRule\FooValidator.cs" />
-    <Compile Include="Decorator\NullValidator.cs" />
     <Compile Include="Response.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Decorator\ValidatingHandler.cs" />
