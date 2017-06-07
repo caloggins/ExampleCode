@@ -3,6 +3,7 @@ using System.Linq;
 using FluentAssertions;
 using FluentValidation;
 using MediatrDecorators.Decorator;
+using MediatrDecorators.MultipleHandlers;
 using MediatrDecorators.MultipleRules;
 using MediatrDecorators.NoValidator;
 using MediatrDecorators.OneRule;
@@ -76,6 +77,21 @@ namespace MediatrDecorators
                 .And.Errors.Count().Should().Be(2);
         }
 
+        [Test]
+        public void ItShouldDoMultipleHandlers()
+        {
+            var mediator = GetMediator();
+
+            var command = new MultipleCommand
+            {
+                Name = "Joe Bagodonuts"
+            };
+            var response = mediator.Send(command);
+
+            response.Should().Be("Joe Bagodonuts");
+        }
+
+
         private static IMediator GetMediator()
         {
             var kernel = new StandardKernel();
@@ -89,10 +105,10 @@ namespace MediatrDecorators
                 .InheritedFrom(typeof(AbstractValidator<>))
                 .BindAllInterfaces());
 
-            kernel.Bind(scan => scan.FromThisAssembly()
-                .SelectAllClasses()
-                .Where(o => o.IsAssignableFrom(typeof(IRequestHandler<,>)))
-                .BindAllInterfaces());
+            //kernel.Bind(scan => scan.FromThisAssembly()
+            //    .SelectAllClasses()
+            //    .Where(o => o.IsAssignableFrom(typeof(IRequestHandler<,>)))
+            //    .BindAllInterfaces());
 
             kernel.Bind(scan => scan.FromThisAssembly()
                 .SelectAllClasses()

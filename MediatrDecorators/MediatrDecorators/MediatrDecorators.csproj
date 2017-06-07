@@ -175,6 +175,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Decorator\NullValidator.cs" />
+    <Compile Include="MultipleHandlers\FirstHandler.cs" />
+    <Compile Include="MultipleHandlers\MultipleCommand.cs" />
+    <Compile Include="MultipleHandlers\SecondHandler.cs" />
     <Compile Include="NoValidator\Command.cs" />
     <Compile Include="NoValidator\CommandHandler.cs" />
     <Compile Include="ValidationTests.cs" />
