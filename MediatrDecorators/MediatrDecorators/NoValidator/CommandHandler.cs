@@ -1,13 +1,15 @@
-﻿using MediatR;
+﻿using System.Threading;
+using System.Threading.Tasks;
+using MediatR;
 
 namespace MediatrDecorators.NoValidator
 {
     // ReSharper disable once UnusedMember.Global
     public class CommandHandler : IRequestHandler<Command, Response>
     {
-        public Response Handle(Command message)
+        public Task<Response> Handle(Command message, CancellationToken token)
         {
-            return new Response();
+            return Task.FromResult(new Response());
         }
     }
 }

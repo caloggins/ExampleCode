@@ -88,7 +88,7 @@
             }
 
             // Tag integration tests, useful to ignore
-            [Test, Integration]
+            [Test, Integration, Ignore]
             public void IntegrationTestsShouldBeIgnored()
             {
                 Assert.Fail("because the database isn't setup");

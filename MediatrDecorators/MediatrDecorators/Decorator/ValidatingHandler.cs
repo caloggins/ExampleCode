@@ -1,4 +1,6 @@
 ﻿using System.Diagnostics;
+using System.Threading;
+using System.Threading.Tasks;
 using FluentValidation;
 using MediatR;
 
@@ -17,12 +19,12 @@ namespace MediatrDecorators.Decorator
         }
 
         [DebuggerStepThrough]
-        public TResponse Handle(TRequest message)
+        public async Task<TResponse> Handle(TRequest message, CancellationToken token)
         {
             var validationResult = validator.Validate(message);
 
             if (validationResult.IsValid)
-                return handler.Handle(message);
+                return await handler.Handle(message, token);
 
             throw new ValidationException(validationResult.Errors);
         }

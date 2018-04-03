@@ -1,4 +1,6 @@
-﻿using MediatR;
+﻿using System.Threading;
+using System.Threading.Tasks;
+using MediatR;
 
 // ReSharper disable UnusedMember.Global
 
@@ -6,9 +8,9 @@ namespace MediatrDecorators.MultipleRules
 {
     public class BarHandler : IRequestHandler<Bar, Response>
     {
-        public Response Handle(Bar message)
+        public Task<Response> Handle(Bar message, CancellationToken token)
         {
-            return new Response();
+            return Task.FromResult(new Response());
         }
     }
 }

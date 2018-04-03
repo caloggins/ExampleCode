@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Threading.Tasks;
 using FluentAssertions;
 using FluentValidation;
 using MediatrDecorators.Decorator;
@@ -44,9 +45,9 @@ namespace MediatrDecorators
             var mediator = GetMediator();
 
             var ping = new Foo();
-            Action act = () => mediator.Send(ping);
+            Func<Task> act = async () => await mediator.Send(ping);
 
-            act.ShouldThrow<ValidationException>();
+            act.Should().Throw<ValidationException>();
         }
 
         [Test]
@@ -70,10 +71,10 @@ namespace MediatrDecorators
             var mediator = GetMediator();
 
             var command = new Bar();
-            Action act = () => mediator.Send(command);
+            Func<Task> act = async () => await mediator.Send(command);
 
-            act.ShouldThrow<ValidationException>()
-                .And.Errors.Count().Should().Be(2);
+            act.Should().Throw<ValidationException>()
+            .And.Errors.Count().Should().Be(2);
         }
 
         private static IMediator GetMediator()
